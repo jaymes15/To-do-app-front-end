@@ -28,14 +28,14 @@ class ContentFeed extends React.Component{
 	};
 
 	getItems() {
-		fetch('http://127.0.0.1:8000/api/item/')
+		fetch('http://reactdjango.pythonanywhere.com/api/item/')
 		.then(results => results.json())
 		.then(results => this.setState({ items : results }));
 	};
 
  	getoneItem(num) {
-		console.log('http://127.0.0.1:8000/api/item/'+num)
-		fetch('http://127.0.0.1:8000/api/item/'+num)
+		
+		fetch('http://reactdjango.pythonanywhere.com/api/item/'+num)
 		.then(results => results.json())
 		.then(results => this.setState({ oneitem : results, items:[] }));
 
@@ -52,7 +52,7 @@ class ContentFeed extends React.Component{
    mySubmitHandler = (event) => {
     	event.preventDefault();
     	console.log(this.state.title);
-    	 $.post('http://127.0.0.1:8000/api/item/',
+    	 $.post('http://reactdjango.pythonanywhere.com/api/item/',
 				  {
 				    title: this.state.title,
 				    description: this.state.description
@@ -61,7 +61,7 @@ class ContentFeed extends React.Component{
 				    alert("Data: " + data + "\nStatus: " + status);
 				   
 				  });
-    	  fetch('http://127.0.0.1:8000/api/item/')
+    	  fetch('http://reactdjango.pythonanywhere.com/api/item/')
 		  .then(results => results.json())
 		  .then(results => this.setState({ items : results }));
 		  
@@ -72,13 +72,13 @@ class ContentFeed extends React.Component{
     	console.log(this.state.title);
     	$.ajax({
     		type: 'PUT',
-    		url: "http://127.0.0.1:8000/api/item/"+this.state.id +"/",
+    		url: "http://reactdjango.pythonanywhere.com/api/item/"+this.state.id +"/",
     		data:{
     			title: this.state.title,
 				description: this.state.description
     		}
     	});
-    	fetch('http://127.0.0.1:8000/api/item/')
+    	fetch('http://reactdjango.pythonanywhere.com/api/item/')
 		.then(results => results.json())
 		.then(results => this.setState({ items : results }));
     	
@@ -88,12 +88,12 @@ class ContentFeed extends React.Component{
 		
 		$.ajax({
     		type: 'DELETE',
-    		url: "http://127.0.0.1:8000/api/item/"+num +"/",
+    		url: "http://reactdjango.pythonanywhere.com/api/item/"+num +"/",
     	});
-        fetch('http://127.0.0.1:8000/api/item/')
+        fetch('http://reactdjango.pythonanywhere.com/api/item/')
     	.then(results => results.json())
     	.then(results => this.setState({ items : results }));
-    	fetch('http://127.0.0.1:8000/api/item/')
+    	fetch('http://reactdjango.pythonanywhere.com/api/item/')
     	.then(results => results.json())
     	.then(results => this.setState({ items : results }));
 
