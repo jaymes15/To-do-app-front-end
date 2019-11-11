@@ -1,6 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import $ from 'jquery';
+import 'bootstrap/dist/css/bootstrap.css';
+import { Row, Col, Card,  CardBody, CardTitle, CardText, Button, Container} from 'reactstrap';
+
 
 
 class ContentFeed extends React.Component{
@@ -10,11 +13,15 @@ class ContentFeed extends React.Component{
     		items : [],
     		oneitem:'',
     		title: null,
-    		description:null
+    		description:null,
+    		id:null
+    		
     	}
     	this.getoneItem = this.getoneItem.bind(this);
     	this.myChangeHandler = this.myChangeHandler.bind(this);
     	this.mySubmitHandler = this.mySubmitHandler.bind(this);
+    	this.deleteItem = this.deleteItem.bind(this);
+    	
     };
 	componentDidMount(){
 		this.getItems();
@@ -60,27 +67,99 @@ class ContentFeed extends React.Component{
 		  
 	}
 
+   mySubmitHandleredit = (event) => {
+    	event.preventDefault();
+    	console.log(this.state.title);
+    	$.ajax({
+    		type: 'PUT',
+    		url: "http://127.0.0.1:8000/api/item/"+this.state.id +"/",
+    		data:{
+    			title: this.state.title,
+				description: this.state.description
+    		}
+    	});
+    	fetch('http://127.0.0.1:8000/api/item/')
+		.then(results => results.json())
+		.then(results => this.setState({ items : results }));
+    	
+	};
+
+	deleteItem(num) {
+		
+		$.ajax({
+    		type: 'DELETE',
+    		url: "http://127.0.0.1:8000/api/item/"+num +"/",
+    	});
+        fetch('http://127.0.0.1:8000/api/item/')
+    	.then(results => results.json())
+    	.then(results => this.setState({ items : results }));
+    	fetch('http://127.0.0.1:8000/api/item/')
+    	.then(results => results.json())
+    	.then(results => this.setState({ items : results }));
+
+		
+	};
+
+	 
+
 	render(){
 		return (
 			<div>
 
+				 <Container>
+      					<Row>
+        					<Col>					
+        							 <form onSubmit={this.mySubmitHandler}>
+										      <h3> Add New Post</h3>
+										      <p>Title:</p>
+										      <input
+										        type='text'
+										        name='title'
+										        onChange={this.myChangeHandler}
+										      />
+										      <p>Description:</p>
+										      <input
+										        type='text'
+										        name='description'
+										        onChange={this.myChangeHandler}
+										      />
+										      <br/>
+										      <br/>
+										     <Button color="success" value='submit'>Submit </Button>
+										</form>
+        					</Col>
+        					<Col>
+        						<form onSubmit={this.mySubmitHandleredit}>
+								      <h3> Edit Post</h3>
+								      <p>ID:</p>
+								      <input
+								        type='text'
+								        name='id'
+								        onChange={this.myChangeHandler}
+								      />
+								      <p>Title:</p>
+								      <input
+								        type='text'
+								        name='title'
+								        onChange={this.myChangeHandler}
+								      />
+								      <p>Description:</p>
+								      <input
+								        type='text'
+								        name='description'
+								        onChange={this.myChangeHandler}
+								      />
+								      <br/>
+								      <br/>
+								     <Button color="success" value='submit'>Submit </Button>
+								</form>
 
-				 <form onSubmit={this.mySubmitHandler}>
-				      
-				      <p>Title:</p>
-				      <input
-				        type='text'
-				        name='title'
-				        onChange={this.myChangeHandler}
-				      />
-				      <p>Description:</p>
-				      <input
-				        type='text'
-				        name='description'
-				        onChange={this.myChangeHandler}
-				      />
-				      <input type='submit'/>
-				</form>
+        					</Col>
+      					</Row>
+      					</Container>
+      					<br/>
+				
+				
 				<h1>{this.state.oneitem.id}</h1>
 				<h1>{this.state.oneitem.title}</h1>
 				<h1>{this.state.oneitem.description}</h1>
@@ -91,18 +170,49 @@ class ContentFeed extends React.Component{
 
 
 				<ul> {this.state.items.map((item, index) => {
-					return <div key = {index} >
-									<h1>ID: {item.id} </h1>
-									<h1>title: {item.title}</h1>
-						   			<h1>description: {item.description}</h1>
-						   			<button onClick = {(e) => this.getoneItem(item.id,e)} > view more</button>
+					return (
+
+						<div key = {index} >
+
+							<Content item={item} />
+									
+						   			<Button color="primary" onClick = {(e) => this.getoneItem(item.id,e)} > view more</Button>
+						   			<Button color="danger" onClick = {(e) => this.deleteItem(item.id,e)} > Delete</Button>
 						   			<hr/>
 						   </div>
-				})} </ul>
+						   )
+				})} 
+				</ul>
 			</div>
 
 			);
 	}
+}
+
+
+class Content extends React.Component{
+	render(){
+		return (
+			<div>
+			<Row>
+				<Col xs="6">
+					<Card>
+						<CardBody>
+							<CardTitle>
+								<h3>ID: {this.props.item.id}</h3>
+								<h3>{this.props.item.title}</h3>
+							</CardTitle>
+							<CardText>
+								{this.props.item.description}
+							</CardText>
+						</CardBody>
+					</Card>
+				</Col>
+				</Row>
+			
+			</div>
+			)}
+
 }
 
 ReactDOM.render(
