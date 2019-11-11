@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.js": "/jaymes15/To-do-app-front-end-/static/js/main.1939d183.chunk.js",
-    "main.js.map": "/jaymes15/To-do-app-front-end-/static/js/main.1939d183.chunk.js.map",
-    "runtime-main.js": "/jaymes15/To-do-app-front-end-/static/js/runtime-main.c04f4832.js",
-    "runtime-main.js.map": "/jaymes15/To-do-app-front-end-/static/js/runtime-main.c04f4832.js.map",
-    "static/css/2.833dd627.chunk.css": "/jaymes15/To-do-app-front-end-/static/css/2.833dd627.chunk.css",
-    "static/js/2.db0da01e.chunk.js": "/jaymes15/To-do-app-front-end-/static/js/2.db0da01e.chunk.js",
-    "static/js/2.db0da01e.chunk.js.map": "/jaymes15/To-do-app-front-end-/static/js/2.db0da01e.chunk.js.map",
-    "index.html": "/jaymes15/To-do-app-front-end-/index.html",
-    "precache-manifest.6ac8e2b72756a927dbab6033f315108f.js": "/jaymes15/To-do-app-front-end-/precache-manifest.6ac8e2b72756a927dbab6033f315108f.js",
-    "service-worker.js": "/jaymes15/To-do-app-front-end-/service-worker.js",
-    "static/css/2.833dd627.chunk.css.map": "/jaymes15/To-do-app-front-end-/static/css/2.833dd627.chunk.css.map"
+    "main.js": "/To-do-app-front-end-/static/js/main.1939d183.chunk.js",
+    "main.js.map": "/To-do-app-front-end-/static/js/main.1939d183.chunk.js.map",
+    "runtime-main.js": "/To-do-app-front-end-/static/js/runtime-main.55328070.js",
+    "runtime-main.js.map": "/To-do-app-front-end-/static/js/runtime-main.55328070.js.map",
+    "static/css/2.833dd627.chunk.css": "/To-do-app-front-end-/static/css/2.833dd627.chunk.css",
+    "static/js/2.db0da01e.chunk.js": "/To-do-app-front-end-/static/js/2.db0da01e.chunk.js",
+    "static/js/2.db0da01e.chunk.js.map": "/To-do-app-front-end-/static/js/2.db0da01e.chunk.js.map",
+    "index.html": "/To-do-app-front-end-/index.html",
+    "precache-manifest.83af24f5e9b99aa33912ca6de6b2ec9c.js": "/To-do-app-front-end-/precache-manifest.83af24f5e9b99aa33912ca6de6b2ec9c.js",
+    "service-worker.js": "/To-do-app-front-end-/service-worker.js",
+    "static/css/2.833dd627.chunk.css.map": "/To-do-app-front-end-/static/css/2.833dd627.chunk.css.map"
   },
   "entrypoints": [
-    "static/js/runtime-main.c04f4832.js",
+    "static/js/runtime-main.55328070.js",
     "static/css/2.833dd627.chunk.css",
     "static/js/2.db0da01e.chunk.js",
     "static/js/main.1939d183.chunk.js"
