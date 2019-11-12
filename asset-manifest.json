@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.js": "/To-do-app-front-end.github.io/contentfeed_frontend/static/js/main.1939d183.chunk.js",
-    "main.js.map": "/To-do-app-front-end.github.io/contentfeed_frontend/static/js/main.1939d183.chunk.js.map",
-    "runtime-main.js": "/To-do-app-front-end.github.io/contentfeed_frontend/static/js/runtime-main.2968fdcc.js",
-    "runtime-main.js.map": "/To-do-app-front-end.github.io/contentfeed_frontend/static/js/runtime-main.2968fdcc.js.map",
-    "static/css/2.833dd627.chunk.css": "/To-do-app-front-end.github.io/contentfeed_frontend/static/css/2.833dd627.chunk.css",
-    "static/js/2.db0da01e.chunk.js": "/To-do-app-front-end.github.io/contentfeed_frontend/static/js/2.db0da01e.chunk.js",
-    "static/js/2.db0da01e.chunk.js.map": "/To-do-app-front-end.github.io/contentfeed_frontend/static/js/2.db0da01e.chunk.js.map",
-    "index.html": "/To-do-app-front-end.github.io/contentfeed_frontend/index.html",
-    "precache-manifest.be6e34bb6f0ebe4bc5c4c9a37be493e7.js": "/To-do-app-front-end.github.io/contentfeed_frontend/precache-manifest.be6e34bb6f0ebe4bc5c4c9a37be493e7.js",
-    "service-worker.js": "/To-do-app-front-end.github.io/contentfeed_frontend/service-worker.js",
-    "static/css/2.833dd627.chunk.css.map": "/To-do-app-front-end.github.io/contentfeed_frontend/static/css/2.833dd627.chunk.css.map"
+    "main.js": "/To-do-app-front-end/static/js/main.1939d183.chunk.js",
+    "main.js.map": "/To-do-app-front-end/static/js/main.1939d183.chunk.js.map",
+    "runtime-main.js": "/To-do-app-front-end/static/js/runtime-main.0e0b2999.js",
+    "runtime-main.js.map": "/To-do-app-front-end/static/js/runtime-main.0e0b2999.js.map",
+    "static/css/2.833dd627.chunk.css": "/To-do-app-front-end/static/css/2.833dd627.chunk.css",
+    "static/js/2.db0da01e.chunk.js": "/To-do-app-front-end/static/js/2.db0da01e.chunk.js",
+    "static/js/2.db0da01e.chunk.js.map": "/To-do-app-front-end/static/js/2.db0da01e.chunk.js.map",
+    "index.html": "/To-do-app-front-end/index.html",
+    "precache-manifest.99f819e5fea8d3861b391d531533eda1.js": "/To-do-app-front-end/precache-manifest.99f819e5fea8d3861b391d531533eda1.js",
+    "service-worker.js": "/To-do-app-front-end/service-worker.js",
+    "static/css/2.833dd627.chunk.css.map": "/To-do-app-front-end/static/css/2.833dd627.chunk.css.map"
   },
   "entrypoints": [
-    "static/js/runtime-main.2968fdcc.js",
+    "static/js/runtime-main.0e0b2999.js",
     "static/css/2.833dd627.chunk.css",
     "static/js/2.db0da01e.chunk.js",
     "static/js/main.1939d183.chunk.js"
