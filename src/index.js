@@ -28,14 +28,14 @@ class ContentFeed extends React.Component{
 	};
 
 	getItems() {
-		fetch('http://reactdjango.pythonanywhere.com/api/item/')
+		fetch('https://reactdjango.pythonanywhere.com/api/item/')
 		.then(results => results.json())
 		.then(results => this.setState({ items : results }));
 	};
 
  	getoneItem(num) {
 		
-		fetch('http://reactdjango.pythonanywhere.com/api/item/'+num)
+		fetch('https://reactdjango.pythonanywhere.com/api/item/'+num)
 		.then(results => results.json())
 		.then(results => this.setState({ oneitem : results, items:[] }));
 
@@ -52,7 +52,7 @@ class ContentFeed extends React.Component{
    mySubmitHandler = (event) => {
     	event.preventDefault();
     	console.log(this.state.title);
-    	 $.post('http://reactdjango.pythonanywhere.com/api/item/',
+    	 $.post('https://reactdjango.pythonanywhere.com/api/item/',
 				  {
 				    title: this.state.title,
 				    description: this.state.description
@@ -61,7 +61,7 @@ class ContentFeed extends React.Component{
 				    alert("Data: " + data + "\nStatus: " + status);
 				   
 				  });
-    	  fetch('http://reactdjango.pythonanywhere.com/api/item/')
+    	  fetch('https://reactdjango.pythonanywhere.com/api/item/')
 		  .then(results => results.json())
 		  .then(results => this.setState({ items : results }));
 		  
@@ -72,13 +72,13 @@ class ContentFeed extends React.Component{
     	console.log(this.state.title);
     	$.ajax({
     		type: 'PUT',
-    		url: "http://reactdjango.pythonanywhere.com/api/item/"+this.state.id +"/",
+    		url: "https://reactdjango.pythonanywhere.com/api/item/"+this.state.id +"/",
     		data:{
     			title: this.state.title,
 				description: this.state.description
     		}
     	});
-    	fetch('http://reactdjango.pythonanywhere.com/api/item/')
+    	fetch('https://reactdjango.pythonanywhere.com/api/item/')
 		.then(results => results.json())
 		.then(results => this.setState({ items : results }));
     	
@@ -88,12 +88,12 @@ class ContentFeed extends React.Component{
 		
 		$.ajax({
     		type: 'DELETE',
-    		url: "http://reactdjango.pythonanywhere.com/api/item/"+num +"/",
+    		url: "https://reactdjango.pythonanywhere.com/api/item/"+num +"/",
     	});
-        fetch('http://reactdjango.pythonanywhere.com/api/item/')
+        fetch('https://reactdjango.pythonanywhere.com/api/item/')
     	.then(results => results.json())
     	.then(results => this.setState({ items : results }));
-    	fetch('http://reactdjango.pythonanywhere.com/api/item/')
+    	fetch('https://reactdjango.pythonanywhere.com/api/item/')
     	.then(results => results.json())
     	.then(results => this.setState({ items : results }));
 
